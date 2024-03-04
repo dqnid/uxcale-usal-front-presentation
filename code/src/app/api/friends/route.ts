@@ -1,28 +1,31 @@
-export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url)
-    const id = searchParams.get('id')
-    const res = await fetch(`https://data.mongodb-api.com/product/${id}`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'API-Key': process.env.DATA_API_KEY!,
-        },
-    })
-    const product = await res.json()
+import { friendList } from './friend-list.mock'
 
-    return Response.json({ product })
+export async function GET() {
+    return Response.json({ data: { friends: friendList } })
 }
 
 export async function POST() {
-    const res = await fetch('https://data.mongodb-api.com/...', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'API-Key': process.env.DATA_API_KEY!,
-        },
-        body: JSON.stringify({ time: new Date().toISOString() }),
-    })
+    const positivePOST = {
+        messages: [
+            {
+                code: 'GOOD_REQUEST',
+                message: 'Friend created',
+                type: 'SUCCESS',
+                description: 'All parameters were provided correctly.',
+            },
+        ],
+    }
 
-    const data = await res.json()
+    const negativePOST = {
+        messages: [
+            {
+                code: 'BAD_REQUEST',
+                message: 'Invalid Parameter',
+                type: 'ERROR',
+                description: 'A parameter has not been provided correctly.',
+            },
+        ],
+    }
 
-    return Response.json(data)
+    return Response.json(positivePOST, { status: 200 })
 }
