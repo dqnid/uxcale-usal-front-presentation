@@ -32,6 +32,8 @@ or
 
 - `$ yarn i`
 
+4. You are ready to launch!
+
 ## Actually running
 
 While being on the base directory of your project (`code/`), we can run the basic project using Node.js through npm:
