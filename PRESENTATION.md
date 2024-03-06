@@ -8,11 +8,8 @@
 ## Architecture
 
 - Client-server: data fetching and UI hydration
-- Web standards: their value on this process
-
-## Protocols
-
 - HTTP & HTTPS
+- Web standards: their value on this process
 - Security
   - JWT & (maybe) basic auth
 

@@ -1,7 +1,7 @@
-import { friendList } from './friend-list.mock'
+import { userList } from './user-list.mock'
 
 export async function GET() {
-    return Response.json({ data: { friends: friendList } })
+    return Response.json({ data: { friends: userList } })
 }
 
 export async function POST() {
