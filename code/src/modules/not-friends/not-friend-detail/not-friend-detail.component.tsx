@@ -6,7 +6,7 @@ import { fetchFriend } from '../not-friends/not-friends.utils'
 export type NotFriendDetailProps = {}
 
 export function NotFriendDetail(props: NotFriendDetailProps) {
-    const params = useParams<{ id: string }>()
+    const params = useParams()
     const [friendInfo, setFriendInfo] = useState({})
 
     useEffect(() => {
