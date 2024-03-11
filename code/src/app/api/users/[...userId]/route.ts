@@ -9,7 +9,7 @@ export async function GET(
     const user = userList.find((user) => user._id === id)
 
     if (user) {
-        return Response.json(
+        return (Response as any).json(
             {
                 url: request.url,
                 data: userList.find((user) => user._id === id),
@@ -18,7 +18,7 @@ export async function GET(
         )
     }
 
-    return Response.json(
+    return (Response as any).json(
         {
             messages: [
                 {
