@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: 32px 1fr 1fr 1fr;
+
+    gap: 2rem;
+
+    text-align: left;
+
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border-radius: 0.2rem;
+}
+
+.username {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    flex-grow: 1;
+}
+
+.name {
+    flex-grow: 1;
+}
+
+.mail {
+    flex-grow: 1;
+}
